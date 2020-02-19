@@ -1,4 +1,55 @@
-Placeholder script 1
-Placeholder script 2
-Placeholder script 3
+...
+Wha-?
+(I suddenly woke up in an unfamiliar place.)
+???: I see you've woken up.
+What...where am I? Who are you?
+???: You don't remember either, huh?
+...
+???: You were probably a prisoner, just like me.
+...
+How did you...know that?
+???: It seems they've brought a bunch of us here,
+???: to play some kind of game.
+Game?
+???: One of them explained the gist of the game to me.
+???: Then he told me to pass on the info to you.
+Okay...
+???: So apparently we're in a tournament called Shoot.
+???: It's basically Rock-Paper-Scissors with modifiers.
+???: We'll each be given 5 cards to use in a rotation.
+???: And each has its own effects that can change the game.
+(While he was explaining, I couldn't help but notice...)
+(I had this weird tablet on me. The other guy had one too.)
+(Didn't seem like it was gonna turn on though.)
+Sounds simple enough.
+???: That's not the interesting part though.
+I don't like the sound of that.
+???: I'm not sure if they're serious about this part, but...
+...
+???: They said the loser of each round was...
+???: To be executed.
+...What?!
+Like...killed?
+???: That's what they said.
+That's insane! There's no way that's for real!
+???: I sure hope so.
+(Suddenly, our tablets lit up.)
+*FIRST ROUND STARTS IN 1 MINUTE*
+(We both said nothing.)
+(This was too weird. Too crazy.)
+(We sat in anticipation for the longest 60 seconds of my life.)
+(Suddenly, I heard footsteps. A guard.)
+Guard: It's time. Move it.
+(My tablet lit up again.)
+*ROUND ONE OPPONENT: ALEX*
+It says my opponent is someone named Alex.
+???: ...
+Uh...
+???: ...
+You okay?
+???: So this is how it's gonna be, huh...
+What?
+???: Nice to meet you. The name's Alex.
+(Before I could react, the guards pulled us away.)
+(It was time for the game to start.)
 !command: end

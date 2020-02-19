@@ -8,15 +8,6 @@ class Player:
         print(self.name + " has " + str(self.HP) + " HP.")
         print(self.name + "'s cards are: " + ','.join(map(str, self.cardOrder)))
 
-    def getName(self):
-        return self.name
-
-    def getHP(self):
-        return self.HP
-
-    def getCurrentCard(self):
-        return self.currentCard
-
     def setHP(self, HP):
         self.HP = HP
         print(self.name + "'s new HP is: " + str(self.HP))
