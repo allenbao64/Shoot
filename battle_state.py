@@ -21,7 +21,7 @@ class BattleState:
         self.playerRPS = selection
 
     def setOpponentRPS(self):
-        selection = random.randint(1,3)
+        selection = random.randint(1, 3)
         if selection == 1:
             self.opponentRPS = "Rock"
         elif selection == 2:
@@ -29,21 +29,33 @@ class BattleState:
         elif selection == 3:
             self.opponentRPS = "Scissors"
 
-    def setPlayerCard(self, selected):
-        if selected:
-            self.playerCard = self.player.currentCard
+    def setPlayerCard(self, cardID):
+        self.playerCard = cardID
 
     def setOpponentCard(self):
         selected = random.randint(1, 10)
         if selected > 3:
-            self.opponentCard = self.opponent.currentCard
+            self.opponentCard = self.opponent.cardOrder[0]
 
     def calculateDamage(self):
-        print('placeholder, calculateDamage')
-        # something something
-        # playerDamage = ___
-        # opponentDamage = ___
-        # self.playerDamage = playerDamage
-        # self.opponentDamage = opponentDamage
-        # self.opponent.HP = self.opponent.HP - self.opponentDamage
-        # self.player.HP = self.player.HP - self.playerDamage
+        if self.playerRPS == "Rock":
+            if self.opponentRPS == "Paper":
+                self.playerDamage = 1
+            elif self.opponentRPS == "Scissors":
+                self.opponentDamage = 1
+        elif self.playerRPS == "Paper":
+            if self.opponentRPS == "Rock":
+                self.opponentDamage = 1
+            elif self.opponentRPS == "Scissors":
+                self.playerDamage = 1
+        elif self.playerRPS == "Scissors":
+            if self.opponentRPS == "Rock":
+                self.playerDamage = 1
+            elif self.opponentRPS == "Paper":
+                self.opponentDamage = 1
+
+        pCard = self.playerCard
+        oCard = self.opponentCard
+
+        self.opponent.HP = self.opponent.HP - self.opponentDamage
+        self.player.HP = self.player.HP - self.playerDamage

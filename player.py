@@ -3,7 +3,6 @@ class Player:
         self.name = name
         self.HP = HP
         self.cardOrder = cardOrder  # list of 5 card ids
-        self.currentCard = self.cardOrder[0]
         print("This is the player " + self.name + ".")
         print(self.name + " has " + str(self.HP) + " HP.")
         print(self.name + "'s cards are: " + ','.join(map(str, self.cardOrder)))
