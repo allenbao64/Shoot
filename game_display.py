@@ -413,6 +413,7 @@ def action_loop(battle, player, opponent):
     gameover = False
     action = True
     clairvoyant = False
+    clairCard = -1
     while action:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:  # if close button is pressed, quit game
@@ -428,9 +429,11 @@ def action_loop(battle, player, opponent):
                         rps_loop(battle, player, opponent)
                     elif victory:
                         screen.fill((0, 0, 0))
+                        pygame.mixer.music.fadeout(1000)
                         victory_loop()
                     elif gameover:
                         screen.fill((0, 0, 0))
+                        pygame.mixer.music.fadeout(1000)
                         gameover_loop()
                     else:
                         battle.calculateDamage()
@@ -449,7 +452,10 @@ def action_loop(battle, player, opponent):
                             battle.storedOCard = -1
                         if battle.playerCard > -1 and cards.getCardDict()[battle.playerCard] == "Clairvoyant":
                             clairvoyant = True
-                            desc = pygame.image.load('images/descriptions/' + str(opponent.cardOrder[1]) + '.png')
+                            clairCard = opponent.cardOrder[1]
+                            if battle.opponentCard == -1:
+                                clairCard = opponent.cardOrder[0]
+                            desc = pygame.image.load('images/descriptions/' + str(clairCard) + '.png')
 
                         topText = player.name + " took " + str(battle.playerDamage) + " HP of damage!"
                         if battle.playerDamage < 0:
@@ -500,7 +506,7 @@ def action_loop(battle, player, opponent):
         screen.blit(TextSurf2, TextRect2)
 
         if clairvoyant:
-            TextSurfC, TextRectC = text_objects("Opponent's next card: " + cards.getCardDict()[opponent.cardOrder[1]], text)
+            TextSurfC, TextRectC = text_objects("Opponent's next card: " + cards.getCardDict()[clairCard], text)
             TextRectC.center = ((screen_width * 0.7), screen_height * 0.02)
             screen.blit(TextSurfC, TextRectC)
             screen.blit(desc, (screen_width * 0.7, screen_height * 0.1))
@@ -510,7 +516,6 @@ def action_loop(battle, player, opponent):
 def victory_loop():
     victory = True
 
-    pygame.mixer.music.stop()
     # pygame.mixer.music.load("audio/music/victory_music_placeholder.wav")
     # pygame.mixer.music.play(-1)
 
@@ -540,7 +545,6 @@ def victory_loop():
 def gameover_loop():
     gameover = True
 
-    pygame.mixer.music.stop()
     # pygame.mixer.music.load("audio/music/gameover_music_placeholder.wav")
     # pygame.mixer.music.play(-1)
 

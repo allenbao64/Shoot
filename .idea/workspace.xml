@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5903836e-b775-48d1-a6a6-7e076786c387" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/allen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/allen.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/battle_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/battle_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards.py" beforeDir="false" afterPath="$PROJECT_DIR$/cards.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game_display.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_display.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/descriptions/0.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/descriptions/0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/descriptions/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/descriptions/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/descriptions/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/descriptions/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/descriptions/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/descriptions/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/descriptions/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/descriptions/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/descriptions/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/descriptions/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/descriptions/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/descriptions/6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/descriptions/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/descriptions/7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/descriptions/8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/descriptions/9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,22 +86,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1581965629093" />
-    <state width="1515" height="160" key="GridCell.Tab.0.bottom" timestamp="1582251547883">
+    <state width="1515" height="160" key="GridCell.Tab.0.bottom" timestamp="1582259030596">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="160" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582251547883" />
-    <state width="1515" height="160" key="GridCell.Tab.0.center" timestamp="1582251547883">
+    <state width="1515" height="160" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582259030596" />
+    <state width="1515" height="160" key="GridCell.Tab.0.center" timestamp="1582259030596">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="160" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582251547883" />
-    <state width="1515" height="160" key="GridCell.Tab.0.left" timestamp="1582251547883">
+    <state width="1515" height="160" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582259030596" />
+    <state width="1515" height="160" key="GridCell.Tab.0.left" timestamp="1582259030596">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="160" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582251547883" />
-    <state width="1515" height="160" key="GridCell.Tab.0.right" timestamp="1582251547883">
+    <state width="1515" height="160" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582259030596" />
+    <state width="1515" height="160" key="GridCell.Tab.0.right" timestamp="1582259030596">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="160" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582251547883" />
+    <state width="1515" height="160" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582259030596" />
     <state x="554" y="98" key="SettingsEditor" timestamp="1581965590299">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
