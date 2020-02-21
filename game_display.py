@@ -50,10 +50,11 @@ def game_intro():
 
         pygame.display.update()
 
-    pygame.mixer.music.stop()
+    pygame.mixer.music.fadeout(1000)
+    time.sleep(0.5)
     select_sound = pygame.mixer.Sound("audio/sfx/game_start.wav")
     pygame.mixer.Sound.play(select_sound)
-    time.sleep(2)
+    time.sleep(1.5)
     screen.fill((0, 0, 0))
     pygame.event.clear()
     story_loop()
@@ -101,7 +102,7 @@ def story_loop():
         pygame.display.update()
 
     screen.fill((0, 0, 0))
-    pygame.mixer.music.stop()
+    pygame.mixer.music.fadeout(1000)
     pygame.event.clear()
     setup_loop()
 
@@ -157,12 +158,12 @@ def setup_loop():
     playerCards = []
     oppOrder = []
     for i in range(0, 5):
-        cardID = random.randint(0, 9)
+        cardID = random.randint(1, 7)
         while cardID in playerCards:
-            cardID = random.randint(0, 9)
-        cardID2 = random.randint(0, 9)
+            cardID = random.randint(1, 7)
+        cardID2 = random.randint(1, 7)
         while cardID2 in oppOrder:
-            cardID2 = random.randint(0, 9)
+            cardID2 = random.randint(1, 7)
         playerCards.append(cardID)
         oppOrder.append(cardID2)
 
@@ -328,7 +329,6 @@ def card_loop(battle, player, opponent):
 
         if skip:
             card = False
-            print(battle.playerCard)
         if activeCard:
             battle.playerCard = player.cardOrder[0]
             card = False
@@ -412,6 +412,7 @@ def action_loop(battle, player, opponent):
     victory = False
     gameover = False
     action = True
+    clairvoyant = False
     while action:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:  # if close button is pressed, quit game
@@ -433,8 +434,29 @@ def action_loop(battle, player, opponent):
                         gameover_loop()
                     else:
                         battle.calculateDamage()
+
+                        if battle.playerCard > -1 and cards.getCardDict()[battle.playerCard] == "Give Dummy":
+                            battle.storedOCard = opponent.cardOrder[1]
+                            opponent.cardOrder[1] = 0
+                        if battle.opponentCard > -1 and cards.getCardDict()[battle.opponentCard] == "Give Dummy":
+                            battle.storedPCard = player.cardOrder[1]
+                            player.cardOrder[1] = 0
+                        if battle.playerCard > -1 and cards.getCardDict()[battle.playerCard] == "Dummy":
+                            player.cardOrder[0] = battle.storedPCard
+                            battle.storedPCard = -1
+                        if battle.opponentCard > -1 and cards.getCardDict()[battle.opponentCard] == "Dummy":
+                            opponent.cardOrder[0] = battle.storedOCard
+                            battle.storedOCard = -1
+                        if battle.playerCard > -1 and cards.getCardDict()[battle.playerCard] == "Clairvoyant":
+                            clairvoyant = True
+                            desc = pygame.image.load('images/descriptions/' + str(opponent.cardOrder[1]) + '.png')
+
                         topText = player.name + " took " + str(battle.playerDamage) + " HP of damage!"
+                        if battle.playerDamage < 0:
+                            topText = player.name + " recovered " + str(battle.playerDamage * -1) + " HP!"
                         botText = opponent.name + " took " + str(battle.opponentDamage) + " HP of damage!"
+                        if battle.opponentDamage < 0:
+                            botText = opponent.name + " recovered " + str(battle.opponentDamage * -1) + " HP!"
                         if player.HP > 0 and opponent.HP > 0:
                             battle.playerDamage = 0
                             battle.opponentDamage = 0
@@ -444,9 +466,9 @@ def action_loop(battle, player, opponent):
                             if battle.opponentCard > -1:
                                 opponent.nextCard()
                             reset = True
-                        elif opponent.HP == 0:
+                        elif opponent.HP <= 0:
                             victory = True
-                        elif player.HP == 0:
+                        elif player.HP <= 0:
                             gameover = True
 
         screen.fill((0, 0, 0))
@@ -476,6 +498,12 @@ def action_loop(battle, player, opponent):
         TextSurf2, TextRect2 = text_objects(botText, text)
         TextRect2.center = ((screen_width * 0.5), (screen_height * 0.9))
         screen.blit(TextSurf2, TextRect2)
+
+        if clairvoyant:
+            TextSurfC, TextRectC = text_objects("Opponent's next card: " + cards.getCardDict()[opponent.cardOrder[1]], text)
+            TextRectC.center = ((screen_width * 0.7), screen_height * 0.02)
+            screen.blit(TextSurfC, TextRectC)
+            screen.blit(desc, (screen_width * 0.7, screen_height * 0.1))
 
         pygame.display.update()
 

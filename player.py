@@ -12,6 +12,6 @@ class Player:
         print(self.name + "'s new HP is: " + str(self.HP))
 
     def nextCard(self):
-        print("Card order before rotation: " + ','.join(map(str, self.cardOrder)))
+        print(self.name + " card order before rotation: " + ','.join(map(str, self.cardOrder)))
         self.cardOrder = self.cardOrder[1:] + self.cardOrder[:1]
-        print("Card order after rotation: " + ','.join(map(str, self.cardOrder)))
+        print(self.name + " card order after rotation: " + ','.join(map(str, self.cardOrder)))
