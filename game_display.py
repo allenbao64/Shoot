@@ -61,6 +61,8 @@ def game_intro():
 
 def story_loop():
     story = True
+    showIm = False
+    playSound = False
 
     file = open('script.txt', 'r')
     line = file.readline()
@@ -80,24 +82,40 @@ def story_loop():
                         story = False
                         screen.fill((0, 0, 0))
                         continue
+                    elif line[0:-2] == "!command: note":
+                        showIm = True
+                        note = pygame.image.load('images/other/note' + line[-2] + '.png')
+                        pageFlip = pygame.mixer.Sound("audio/sfx/page.wav")
+                        pygame.mixer.Sound.play(pageFlip)
+                    elif line[0:-1] == "!command: sound buzzer":
+                        playSound = True
+                        buzzerSound = pygame.mixer.Sound("audio/sfx/buzzer.wav")
+                        pygame.mixer.Sound.play(buzzerSound)
+                        time.sleep(2)
+                        pygame.event.clear()
+                    else:
+                        showIm = False
+                        playSound = False
 
         screen.fill((0, 0, 0))
 
         bgImage = pygame.image.load('images/backgrounds/jail.jpg')
         screen.blit(bgImage, (0, 0))
-        charImage = pygame.image.load('images/characters/placeholder.png')
-        screen.blit(charImage, (screen_width*0.35, screen_height*0.3))
 
         text = pygame.font.SysFont('Arial', 30)
 
-        pygame.draw.rect(screen, (0, 0, 0), (screen_width*0.05, screen_height*0.7, screen_width*0.9, screen_height*0.25))
+        if not showIm and not playSound:
+            pygame.draw.rect(screen, (0, 0, 0), (screen_width*0.05, screen_height*0.7, screen_width*0.9, screen_height*0.25))
 
-        if not story:
-            continue
-        else:
-            TextSurf, TextRect = text_objects(line[0:-1], text)
-            TextRect.center = ((screen_width / 2), (screen_height*0.75))
-            screen.blit(TextSurf, TextRect)
+            if not story:
+                continue
+            else:
+                TextSurf, TextRect = text_objects(line[0:-1], text)
+                TextRect.center = ((screen_width / 2), (screen_height*0.80))
+                screen.blit(TextSurf, TextRect)
+
+        if showIm:
+            screen.blit(note, (screen_width * 0.3, screen_height * 0.2))
 
         pygame.display.update()
 
@@ -113,8 +131,8 @@ def cardButton(selected, cardNum, text, x, y, w, h, color, active_color):
 
     if x + w > mouse[0] > x and y + h > mouse[1] > y:
         pygame.draw.rect(screen, active_color, (x, y, w, h))
-        if click[0] == 1:
-            selection = cardNum
+        if click[0] == 1 and selection == 0:
+            selection = cardNum + 1
             select_sound = pygame.mixer.Sound("audio/sfx/card_select.wav")
             pygame.mixer.Sound.play(select_sound)
     else:
@@ -167,7 +185,7 @@ def setup_loop():
         playerCards.append(cardID)
         oppOrder.append(cardID2)
 
-    playerOrder = [-1]
+    playerOrder = []
 
     selections = [0, 0, 0, 0, 0]
 
@@ -182,7 +200,7 @@ def setup_loop():
         reset = miscButton("RESET", screen_width * 0.02, screen_height * 0.85, screen_width * 0.13, screen_height * 0.1, (0, 0, 100), (0, 0, 200))
         if reset:
             reset = False
-            playerOrder = [-1]
+            playerOrder = []
             selections = [0, 0, 0, 0, 0]
 
         confirm = miscButton("CONFIRM", screen_width * 0.85, screen_height * 0.85, screen_width * 0.13, screen_height * 0.1, (0, 100, 0), (0, 200, 0))
@@ -205,8 +223,6 @@ def setup_loop():
                        screen_height * 0.25, screen_width * 0.15, screen_height * 0.1, (100, 0, 0), (255, 0, 0))
             if selections[i] > 0:
                 if playerCards[i] not in playerOrder:
-                    if -1 in playerOrder:
-                        playerOrder.pop()
                     playerOrder.append(playerCards[i])
                 buttonImage = pygame.image.load("images/buttons/" + str(selections[i]) + ".png")
                 screen.blit(buttonImage, (screen_width * current + 8, screen_height * 0.14))
