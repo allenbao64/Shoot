@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5903836e-b775-48d1-a6a6-7e076786c387" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/characters/mike.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/other/heart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/other/paper.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/other/paperO.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/other/rock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/other/rockO.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/other/scissors.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/other/scissorsO.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_display.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_display.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
