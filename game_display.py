@@ -32,21 +32,28 @@ def game_intro():
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     intro = False
+                if event.key == pygame.K_RETURN:
+                    setup_loop()
 
         titleText = pygame.font.SysFont('Arial', 80)
         TextSurf, TextRect = text_objects("Shoot - Demo Version", titleText)
-        TextRect.center = ((screen_width * 0.5), (screen_height * 0.4))
+        TextRect.center = ((screen_width * 0.5), (screen_height * 0.35))
         screen.blit(TextSurf, TextRect)
 
         subtitleText = pygame.font.SysFont('Arial', 50)
         TextSurf2, TextRect2 = text_objects("Press SPACE to start", subtitleText)
-        TextRect2.center = ((screen_width * 0.5), (screen_height * 0.6))
+        TextRect2.center = ((screen_width * 0.5), (screen_height * 0.55))
         screen.blit(TextSurf2, TextRect2)
 
+        subtitleText = pygame.font.SysFont('Arial', 50)
+        TextSurf3, TextRect3 = text_objects("Press ENTER to skip story", subtitleText)
+        TextRect3.center = ((screen_width * 0.5), (screen_height * 0.7))
+        screen.blit(TextSurf3, TextRect3)
+
         subtitleText = pygame.font.SysFont('Arial', 30)
-        TextSurf2, TextRect2 = text_objects("A game by Allen Bao (250904206)", subtitleText)
-        TextRect2.center = ((screen_width * 0.5), (screen_height * 0.85))
-        screen.blit(TextSurf2, TextRect2)
+        TextSurf4, TextRect4 = text_objects("A game by Allen Bao (250904206)", subtitleText)
+        TextRect4.center = ((screen_width * 0.5), (screen_height * 0.85))
+        screen.blit(TextSurf4, TextRect4)
 
         pygame.display.update()
 
@@ -235,7 +242,7 @@ def setup_loop():
         pygame.display.update()
 
     player = Player("Player", 10, playerOrder)
-    opponent = Player("Opponent", 10, oppOrder)
+    opponent = Player("Lord Mike", 10, oppOrder)
     battle = BattleState(player, opponent)
 
     screen.fill((0, 0, 0))
@@ -251,7 +258,9 @@ def setup_loop():
 def rps_loop(battle, player, opponent):
     time.sleep(0.25)
 
-    enemyImg = pygame.image.load('images/characters/placeholder.png')
+    enemyImg = pygame.image.load('images/characters/mike.jpg')
+    heart = pygame.image.load("images/other/heart.png")
+
     rps = True
     while rps:
         for event in pygame.event.get():
@@ -266,9 +275,19 @@ def rps_loop(battle, player, opponent):
         TextRect.center = ((screen_width * 0.2), (screen_height * 0.15))
         screen.blit(TextSurf, TextRect)
 
+        oppHeartPos = 0.02
+        for i in range(0, opponent.HP):
+            screen.blit(heart, (screen_width * oppHeartPos, screen_height * 0.2))
+            oppHeartPos = oppHeartPos + 0.035
+
         TextSurf2, TextRect2 = text_objects(player.name + " HP: " + str(player.HP), HPText)
         TextRect2.center = ((screen_width * 0.5), (screen_height * 0.6))
         screen.blit(TextSurf2, TextRect2)
+
+        playerHeartPos = 0.32
+        for i in range(0, player.HP):
+            screen.blit(heart, (screen_width * playerHeartPos, screen_height * 0.65))
+            playerHeartPos = playerHeartPos + 0.035
 
         TextSurf3, TextRect3 = text_objects("Turn " + str(battle.turn_counter), HPText)
         TextRect3.center = ((screen_width * 0.1), (screen_height * 0.05))
@@ -304,7 +323,9 @@ def rps_loop(battle, player, opponent):
 def card_loop(battle, player, opponent):
     time.sleep(0.25)
 
-    enemyImg = pygame.image.load('images/characters/placeholder.png')
+    enemyImg = pygame.image.load('images/characters/mike.jpg')
+    heart = pygame.image.load("images/other/heart.png")
+
     card = True
     while card:
         for event in pygame.event.get():
@@ -318,10 +339,19 @@ def card_loop(battle, player, opponent):
         TextSurf, TextRect = text_objects(opponent.name + " HP: " + str(opponent.HP), HPText)
         TextRect.center = ((screen_width * 0.2), (screen_height * 0.15))
         screen.blit(TextSurf, TextRect)
+        oppHeartPos = 0.02
+        for i in range(0, opponent.HP):
+            screen.blit(heart, (screen_width * oppHeartPos, screen_height * 0.2))
+            oppHeartPos = oppHeartPos + 0.035
 
         TextSurf2, TextRect2 = text_objects(player.name + " HP: " + str(player.HP), HPText)
         TextRect2.center = ((screen_width * 0.5), (screen_height * 0.6))
         screen.blit(TextSurf2, TextRect2)
+
+        playerHeartPos = 0.32
+        for i in range(0, player.HP):
+            screen.blit(heart, (screen_width * playerHeartPos, screen_height * 0.65))
+            playerHeartPos = playerHeartPos + 0.035
 
         TextSurf3, TextRect3 = text_objects("Turn " + str(battle.turn_counter), HPText)
         TextRect3.center = ((screen_width * 0.1), (screen_height * 0.05))
@@ -360,7 +390,9 @@ def card_loop(battle, player, opponent):
 def shoot_loop(battle, player, opponent):
     time.sleep(0.25)
 
-    enemyImg = pygame.image.load('images/characters/placeholder.png')
+    enemyImg = pygame.image.load('images/characters/mike.jpg')
+    heart = pygame.image.load("images/other/heart.png")
+
     shoot = True
     while shoot:
         for event in pygame.event.get():
@@ -375,9 +407,19 @@ def shoot_loop(battle, player, opponent):
         TextRect.center = ((screen_width * 0.2), (screen_height * 0.15))
         screen.blit(TextSurf, TextRect)
 
+        oppHeartPos = 0.02
+        for i in range(0, opponent.HP):
+            screen.blit(heart, (screen_width * oppHeartPos, screen_height * 0.2))
+            oppHeartPos = oppHeartPos + 0.035
+
         TextSurf2, TextRect2 = text_objects(player.name + " HP: " + str(player.HP), HPText)
         TextRect2.center = ((screen_width * 0.5), (screen_height * 0.6))
         screen.blit(TextSurf2, TextRect2)
+
+        playerHeartPos = 0.32
+        for i in range(0, player.HP):
+            screen.blit(heart, (screen_width * playerHeartPos, screen_height * 0.65))
+            playerHeartPos = playerHeartPos + 0.035
 
         TextSurf3, TextRect3 = text_objects("Turn " + str(battle.turn_counter), HPText)
         TextRect3.center = ((screen_width * 0.1), (screen_height * 0.05))
@@ -422,7 +464,8 @@ def action_loop(battle, player, opponent):
     if battle.opponentCard > -1:
         botText = opponent.name + " used " + battle.opponentRPS + " and " + cards.getCardDict()[battle.opponentCard] + "!"
 
-    enemyImg = pygame.image.load('images/characters/placeholder.png')
+    enemyImg = pygame.image.load('images/characters/mike.jpg')
+    heart = pygame.image.load("images/other/heart.png")
 
     reset = False
     victory = False
@@ -502,9 +545,22 @@ def action_loop(battle, player, opponent):
         TextRect.center = ((screen_width * 0.2), (screen_height * 0.15))
         screen.blit(TextSurf, TextRect)
 
+        oppHeartPos = 0.02
+        for i in range(0, opponent.HP):
+            screen.blit(heart, (screen_width * oppHeartPos, screen_height * 0.2))
+            oppHeartPos = oppHeartPos + 0.035
+
+        screen.blit(pygame.image.load("images/other/" + battle.opponentRPS + "O.png"), (screen_width * 0.12, screen_height * 0.23))
+        screen.blit(pygame.image.load("images/other/" + battle.playerRPS + ".png"), (screen_width * 0.11, screen_height * 0.45))
+
         TextSurf2, TextRect2 = text_objects(player.name + " HP: " + str(player.HP), HPText)
         TextRect2.center = ((screen_width * 0.5), (screen_height * 0.6))
         screen.blit(TextSurf2, TextRect2)
+
+        playerHeartPos = 0.32
+        for i in range(0, player.HP):
+            screen.blit(heart, (screen_width * playerHeartPos, screen_height * 0.65))
+            playerHeartPos = playerHeartPos + 0.035
 
         TextSurf3, TextRect3 = text_objects("Turn " + str(battle.turn_counter), HPText)
         TextRect3.center = ((screen_width * 0.1), (screen_height * 0.05))
@@ -587,10 +643,3 @@ def gameover_loop():
 
     pygame.quit()
     quit()
-
-# if win:
-#     pygame.event.clear()
-#     victory_loop()
-# else:
-#     pygame.event.clear()
-#     gameover_loop()

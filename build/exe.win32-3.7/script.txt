@@ -1,0 +1,39 @@
+...
+Where am I?
+I suddenly woke up in an unfamiliar place.
+Well, not entirely unfamiliar, I guess.
+I was in a jail cell.
+For a regular person, that might be a jarring place to wake up in.
+For me, the weird thing was that it wasn't my usual jail cell.
+I noticed a piece of paper on the ground. A note.
+I picked it up and started reading.
+!command: note1
+!command: note2
+...
+What the hell?
+There's no way this is for real.
+A chance at freedom? Way too good to be true.
+But "forfeiting your life"...
+I didn't even want to think about that.
+Who was doing this? And why?
+...
+I sat around in anticipation.
+...
+The minutes passed.
+...
+Minutes became hours.
+...
+.....
+.......
+!command: sound buzzer
+..!
+The loud buzzer shook me awake.
+It was followed by a booming voice on the loudspeaker.
+*THE GAME WILL NOW BEGIN.*
+Suddenly, the jail cell's door swung open.
+*PLEASE PROCEED DOWN THE HALLWAY.*
+It was time for the game to start.
+I left the cell and walked down the long hallway.
+I eventually got to a door with a sign that read: "Prep room".
+I took a deep breath and walked in, unsure of what was to come.
+!command: end
