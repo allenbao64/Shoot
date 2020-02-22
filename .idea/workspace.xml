@@ -39,7 +39,7 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.setup bdist">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Shoot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -139,22 +139,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582398077406" />
-    <state width="1515" height="160" key="GridCell.Tab.0.bottom" timestamp="1582398311478">
+    <state width="1515" height="160" key="GridCell.Tab.0.bottom" timestamp="1582398514377">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="160" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582398311478" />
-    <state width="1515" height="160" key="GridCell.Tab.0.center" timestamp="1582398311477">
+    <state width="1515" height="160" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582398514377" />
+    <state width="1515" height="160" key="GridCell.Tab.0.center" timestamp="1582398514377">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="160" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582398311477" />
-    <state width="1515" height="160" key="GridCell.Tab.0.left" timestamp="1582398311477">
+    <state width="1515" height="160" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582398514377" />
+    <state width="1515" height="160" key="GridCell.Tab.0.left" timestamp="1582398514377">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="160" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582398311477" />
-    <state width="1515" height="160" key="GridCell.Tab.0.right" timestamp="1582398311477">
+    <state width="1515" height="160" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582398514377" />
+    <state width="1515" height="160" key="GridCell.Tab.0.right" timestamp="1582398514377">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="160" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582398311477" />
+    <state width="1515" height="160" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582398514377" />
     <state x="554" y="98" key="SettingsEditor" timestamp="1581965590299">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
