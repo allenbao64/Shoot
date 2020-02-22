@@ -243,7 +243,7 @@ def setup_loop():
 
     # creates new player objects with their starting attributes (HP and card order)
     player = Player("Player", 10, playerOrder)
-    opponent = Player("Lord Mike", 1, oppOrder)
+    opponent = Player("Lord Mike", 10, oppOrder)
     battle = BattleState(player, opponent)  # starts new battle with the two players
 
     screen.fill((0, 0, 0))
@@ -524,9 +524,6 @@ def action_loop(battle, player, opponent):  # loop that plays to calculate all r
 def victory_loop():
     victory = True
 
-    # pygame.mixer.music.load("audio/music/victory_music_placeholder.wav")
-    # pygame.mixer.music.play(-1)
-
     while victory:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -552,9 +549,6 @@ def victory_loop():
 
 def gameover_loop():
     gameover = True
-
-    # pygame.mixer.music.load("audio/music/gameover_music_placeholder.wav")
-    # pygame.mixer.music.play(-1)
 
     while gameover:
         for event in pygame.event.get():
