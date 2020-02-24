@@ -35,22 +35,22 @@ def game_intro():  # runs loop to display the intro screen
                 if event.key == pygame.K_RETURN:  # if enter/return is pressed the game will skip directly to the battle setup
                     setup_loop()
 
-        titleText = pygame.font.SysFont('Arial', 80)
+        titleText = pygame.font.Font('SourceSansPro-Regular.ttf', 80)
         TextSurf, TextRect = text_objects("Shoot - Demo Version", titleText)  # Main title text
         TextRect.center = ((screen_width * 0.5), (screen_height * 0.35))
         screen.blit(TextSurf, TextRect)
 
-        subtitleText = pygame.font.SysFont('Arial', 50)
+        subtitleText = pygame.font.Font('SourceSansPro-Regular.ttf', 50)
         TextSurf2, TextRect2 = text_objects("Press SPACE to start", subtitleText)
         TextRect2.center = ((screen_width * 0.5), (screen_height * 0.55))
         screen.blit(TextSurf2, TextRect2)
 
-        subtitleText = pygame.font.SysFont('Arial', 50)
+        subtitleText = pygame.font.Font('SourceSansPro-Regular.ttf', 50)
         TextSurf3, TextRect3 = text_objects("Press ENTER to skip story", subtitleText)
         TextRect3.center = ((screen_width * 0.5), (screen_height * 0.7))
         screen.blit(TextSurf3, TextRect3)
 
-        subtitleText = pygame.font.SysFont('Arial', 30)
+        subtitleText = pygame.font.Font('SourceSansPro-Regular.ttf', 30)
         TextSurf4, TextRect4 = text_objects("A game by Allen Bao (250904206)", subtitleText)
         TextRect4.center = ((screen_width * 0.5), (screen_height * 0.85))
         screen.blit(TextSurf4, TextRect4)
@@ -109,7 +109,7 @@ def story_loop():
         bgImage = pygame.image.load('images/backgrounds/jail.jpg')
         screen.blit(bgImage, (0, 0))  # projects background image
 
-        text = pygame.font.SysFont('Arial', 30)
+        text = pygame.font.Font('SourceSansPro-Regular.ttf', 25)
 
         if not showIm and not playSound:  # draws text box for when dialogue needs to appear
             pygame.draw.rect(screen, (0, 0, 0), (screen_width*0.05, screen_height*0.7, screen_width*0.9, screen_height*0.25))
@@ -145,7 +145,7 @@ def cardButton(selected, cardNum, text, x, y, w, h, color, active_color):  # cre
     else:
         pygame.draw.rect(screen, color, (x, y, w, h))  # displays the typical card box colour while not being hovered over
 
-    cardText = pygame.font.SysFont("Arial", 15)
+    cardText = pygame.font.Font('SourceSansPro-Regular.ttf', 15)
     textSurf, textRect = text_objects(text, cardText)  # displays text over the boxes
     textRect.center = ((x + (w / 2)), (y + (h / 2)))
     screen.blit(textSurf, textRect)
@@ -166,7 +166,7 @@ def miscButton(text, x, y, w, h, color, active_color, cardHover=False, cardID=No
     else:
         pygame.draw.rect(screen, color, (x, y, w, h))
 
-    cardText = pygame.font.SysFont("Arial", 20)
+    cardText = pygame.font.Font('SourceSansPro-Regular.ttf', 20)
     textSurf, textRect = text_objects(text, cardText)
     textRect.center = ((x + (w / 2)), (y + (h / 2)))
     screen.blit(textSurf, textRect)
@@ -214,12 +214,12 @@ def setup_loop():
         if confirm and len(playerOrder) == 5:  # exits loop if the right number of selections has been made
             setup = False
 
-        text = pygame.font.SysFont('Arial', 60)
+        text = pygame.font.Font('SourceSansPro-Regular.ttf', 60)
         TextSurf, TextRect = text_objects("SHOOT PREPARATION", text)
         TextRect.center = ((screen_width / 2), (screen_height * 0.1))
         screen.blit(TextSurf, TextRect)
 
-        text2 = pygame.font.SysFont('Arial', 40)
+        text2 = pygame.font.Font('SourceSansPro-Regular.ttf', 35)
         TextSurf2, TextRect2 = text_objects("Select the order of your ability cards!", text2)
         TextRect2.center = ((screen_width / 2), (screen_height * 0.9))
         screen.blit(TextSurf2, TextRect2)
@@ -262,7 +262,7 @@ def battle_permanent_display(battle, player, opponent):  # loads and displays im
 
     screen.blit(enemyImg, (screen_width * 0.4, screen_height * 0.05))  # display enemy image
 
-    HPText = pygame.font.SysFont('Arial', 40)
+    HPText = pygame.font.Font('SourceSansPro-Regular.ttf', 40)
     TextSurf, TextRect = text_objects(opponent.name + " HP: " + str(opponent.HP), HPText)  # display opponent HP
     TextRect.center = ((screen_width * 0.2), (screen_height * 0.15))
     screen.blit(TextSurf, TextRect)
@@ -505,7 +505,7 @@ def action_loop(battle, player, opponent):  # loop that plays to calculate all r
         screen.blit(pygame.image.load("images/other/" + battle.opponentRPS + "O.png"), (screen_width * 0.12, screen_height * 0.23))
         screen.blit(pygame.image.load("images/other/" + battle.playerRPS + ".png"), (screen_width * 0.11, screen_height * 0.45))
 
-        text = pygame.font.SysFont('Arial', 25)
+        text = pygame.font.Font('SourceSansPro-Regular.ttf', 25)
         TextSurf, TextRect = text_objects(topText, text)
         TextRect.center = ((screen_width * 0.5), (screen_height * 0.75))
         screen.blit(TextSurf, TextRect)
@@ -533,12 +533,12 @@ def victory_loop():
                 if event.key == pygame.K_SPACE:
                     victory = False
 
-        titleText = pygame.font.SysFont('Arial', 80)
+        titleText = pygame.font.Font('SourceSansPro-Regular.ttf', 80)
         TextSurf, TextRect = text_objects("VICTORY!", titleText)
         TextRect.center = ((screen_width * 0.5), (screen_height * 0.4))
         screen.blit(TextSurf, TextRect)
 
-        subtitleText = pygame.font.SysFont('Arial', 50)
+        subtitleText = pygame.font.Font('SourceSansPro-Regular.ttf', 50)
         TextSurf2, TextRect2 = text_objects("End of Demo - Press SPACE to quit", subtitleText)
         TextRect2.center = ((screen_width * 0.5), (screen_height * 0.6))
         screen.blit(TextSurf2, TextRect2)
@@ -559,12 +559,12 @@ def gameover_loop():
                 if event.key == pygame.K_SPACE:
                     gameover = False
 
-        titleText = pygame.font.SysFont('Arial', 80)
+        titleText = pygame.font.Font('SourceSansPro-Regular.ttf', 80)
         TextSurf, TextRect = text_objects("GAME OVER", titleText)
         TextRect.center = ((screen_width * 0.5), (screen_height * 0.4))
         screen.blit(TextSurf, TextRect)
 
-        subtitleText = pygame.font.SysFont('Arial', 50)
+        subtitleText = pygame.font.Font('SourceSansPro-Regular.ttf', 50)
         TextSurf2, TextRect2 = text_objects("End of Demo - Press SPACE to quit", subtitleText)
         TextRect2.center = ((screen_width * 0.5), (screen_height * 0.6))
         screen.blit(TextSurf2, TextRect2)
